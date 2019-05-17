@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>测试插入图片</title>
-      <link href="/2019/05/17/test2/"/>
-      <url>/2019/05/17/test2/</url>
+      <title>hello world</title>
+      <link href="/2019/05/17/hello-world/"/>
+      <url>/2019/05/17/hello-world/</url>
       
-        <content type="html"><![CDATA[<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul><li><p>公式</p><p>$x^2=y$</p></li></ul><p>test equation</p><p><img src="/2019/05/17/test2/test.png" alt="test2"></p>]]></content>
+        <content type="html"><![CDATA[<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>使用Hexo + GithubPage创建个人网站总结与验证。</p><h4 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h4><ul><li><a href="https://www.simon96.online/2018/10/12/hexo-tutorial/" target="_blank" rel="noopener">最全Hexo博客搭建</a></li><li><a href="https://www.jianshu.com/p/8d28027fec76" target="_blank" rel="noopener">hexo+github上传图片到博客</a></li><li><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo|Themes</a></li></ul><h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><ol><li><p>创建新的md文件</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"new file"</span></span><br></pre></td></tr></table></figure></li><li><p>清除缓存</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li><li><p>打开本地服务，查看网页生成是否达到预期</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>然后浏览器输入<code>localhost:4000</code></p></li><li><p>上传到网站</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><p>此时便可登录网站查看生成的blog</p></li></ol><h4 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h4><p>主题的选择看个人需求，比如我博客内容更多的关于科研文章的解读，需要频繁的输入公式和贴图，论文的截图一般都是白色背景，所以我选择主题需要支持<code>mathjax</code>, 以及白色背景最好， 最终选择模板<a href="https://github.com/dongyuanxin/theme-bmw" target="_blank" rel="noopener">BMW</a></p><h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><h5 id="测试公式是否能显示正常"><a href="#测试公式是否能显示正常" class="headerlink" title="测试公式是否能显示正常"></a>测试公式是否能显示正常</h5><p>行内公式： $y=\frac{\alpha^2+\sum_{i=1}^\beta\Phi(\hat{x}_i)}{\text{exp}(x^2)}$</p><p>行间公式：</p><script type="math/tex; mode=display">y=\begin{cases}x^2+z^2, \text{   if} x>z, \\(z-x)^2, \text{else}\end{cases}.</script><h5 id="测试图片是否能够正常显示"><a href="#测试图片是否能够正常显示" class="headerlink" title="测试图片是否能够正常显示"></a>测试图片是否能够正常显示</h5><p><img src="/2019/05/17/hello-world/notes\note_images\girl.png" alt="girl"></p>]]></content>
       
       
       
@@ -21,21 +21,41 @@
     </entry>
     
     
+  
+  
+    
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/05/17/hello-world/"/>
-      <url>/2019/05/17/hello-world/</url>
+      <title>About</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
+        <content type="html"><![CDATA[<p>Teis is a test</p>]]></content>
       
     </entry>
     
     
-  
-  
+    
+    <entry>
+      <title>Project</title>
+      <link href="/project/index.html"/>
+      <url>/project/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
     
   
 </search>

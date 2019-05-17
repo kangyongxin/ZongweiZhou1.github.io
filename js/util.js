@@ -1,127 +1,78 @@
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0): util.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * --------------------------------------------------------------------------
- */
-var Util = function ($) {
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
-  var transition = false;
-  var MAX_UID = 1000000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+const Marked = window.marked;
 
-  function toType(obj) {
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
+// Marked.setOptions({
+//   highlight: (code, lang) =>
+//     Prism.highlight(code, Prism.languages[lang || "markup"], lang || "markup")
+// });
+
+const mdToHTML = content => Marked(content)
+
+const getRealPath = (pathname, desc = false) => {
+  if(!pathname) {
+    pathname = window.location.pathname
   }
-
-  function getSpecialTransitionEndEvent() {
-    return {
-      bindType: transition.end,
-      delegateType: transition.end,
-      handle: function handle(event) {
-        if ($(event.target).is(this)) {
-          return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-        }
-
-        return undefined; // eslint-disable-line no-undefined
+  let names = pathname.split("/")
+  if(desc === false) {
+    for(let i = names.length - 1; i >= 0; --i) {
+      let name = names[i].trim()
+      if(name.length > 0 && name !== "/" && name !== "index.html") {
+        return name
       }
-    };
-  }
-
-  function transitionEndTest() {
-    if (typeof window !== 'undefined' && window.QUnit) {
-      return false;
     }
-
-    return {
-      end: 'transitionend'
-    };
+  } else {
+    for(let i = 0 ; i < names.length; ++i) {
+      let name = names[i].trim()
+      if(name.length > 0 && name !== "/" && name !== "index.html") {
+        return name
+      }
+    }
   }
+  return "/"
+}
 
-  function transitionEndEmulator(duration) {
-    var _this = this;
-
-    var called = false;
-    $(this).one(Util.TRANSITION_END, function () {
-      called = true;
+const generateToc = () => {
+  if(document.body.clientWidth < 768) {
+    return;
+  }
+  $("#sidebar-header").append("<span> Table of Contents </span>");
+  let sidebar = $("#sidebar"),
+    app = $("#app"),
+    topBtn = $(".back-to-top");
+  app.addClass("sidebar-active");
+  sidebar.addClass("sidebar-active");
+  if (document.body.clientWidth <= 768) {
+    topBtn.attr("style", "right: calc(2rem + 200px);");
+  } else {
+    topBtn.attr("style", "right: calc(2rem + 250px);");
+  }
+  topBtn.addClass("sidebar-active");
+  
+  $(".markdown-body")
+    .find("h2,h3,h4,h5,h6")
+    .each(function(i, item) {
+      let tag = $(item).get(0).localName;
+      let tagID = $(item)
+        .text()
+        .replace(/\s{2}/g, "");
+      let idName = $(item).attr("id");
+      $("#sidebar-toc").append(`
+      <li class="toc-${tag}">
+        <a data-id=#${idName}>
+          ${tagID}
+        </a>
+      </li>
+    `);
     });
-    setTimeout(function () {
-      if (!called) {
-        Util.triggerTransitionEnd(_this);
-      }
-    }, duration);
-    return this;
-  }
-
-  function setTransitionEndSupport() {
-    transition = transitionEndTest();
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
-
-    if (Util.supportsTransitionEnd()) {
-      $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-    }
-  }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
-
-
-  var Util = {
-    TRANSITION_END: 'bsTransitionEnd',
-    getUID: function getUID(prefix) {
-      do {
-        // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-      } while (document.getElementById(prefix));
-
-      return prefix;
-    },
-    getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
-
-      if (!selector || selector === '#') {
-        selector = element.getAttribute('href') || '';
-      }
-
-      try {
-        var $selector = $(document).find(selector);
-        return $selector.length > 0 ? selector : null;
-      } catch (err) {
-        return null;
-      }
-    },
-    reflow: function reflow(element) {
-      return element.offsetHeight;
-    },
-    triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $(element).trigger(transition.end);
-    },
-    supportsTransitionEnd: function supportsTransitionEnd() {
-      return Boolean(transition);
-    },
-    isElement: function isElement(obj) {
-      return (obj[0] || obj).nodeType;
-    },
-    typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-      for (var property in configTypes) {
-        if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-          var expectedTypes = configTypes[property];
-          var value = config[property];
-          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
-
-          if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
-          }
-        }
-      }
-    }
-  };
-  setTransitionEndSupport();
-  return Util;
-}($);
-//# sourceMappingURL=util.js.map
+  $("#sidebar-toc").on("click", "li", function() {
+    let idName = $(this)
+      .find("a")
+      .data("id");
+    $("html, body").animate(
+      {
+        scrollTop: $(idName).offset().top - $(".header-wrap").height()
+      },
+      { duration: 500, easing: "swing" }
+    );
+    return false;
+  });
+}
