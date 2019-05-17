@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YixiaoZhou&#39;s blog</title>
+  
+  <subtitle>修行路上的科研小站</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-05-17T07:56:11.073Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>zongweizhou</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试插入图片</title>
+    <link href="http://yoursite.com/2019/05/17/test2/"/>
+    <id>http://yoursite.com/2019/05/17/test2/</id>
+    <published>2019-05-17T07:08:13.000Z</published>
+    <updated>2019-05-17T07:56:11.073Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;测试&quot;&gt;&lt;a href=&quot;#测试&quot; class=&quot;headerlink&quot; title=&quot;测试&quot;&gt;&lt;/a&gt;测试&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;公式&lt;/p&gt;
+&lt;p&gt;$x^2=y$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;test
+        
+      
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/05/17/hello-world/"/>
+    <id>http://yoursite.com/2019/05/17/hello-world/</id>
+    <published>2019-05-17T03:09:32.079Z</published>
+    <updated>2019-05-17T03:09:32.079Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
