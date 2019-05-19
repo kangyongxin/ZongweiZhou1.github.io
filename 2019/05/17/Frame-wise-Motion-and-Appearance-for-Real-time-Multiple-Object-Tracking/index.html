@@ -8,12 +8,12 @@
   
   
   
-  <title>Tags | YixiaoZhou&#39;s blog</title>
+  <title>阅读笔记-Frame-wise Motion and Appearance for Real-time Multiple Object Tracking | YixiaoZhou&#39;s blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw">
+    <meta name="keywords" content="MOT,Motion and Appearance,">
   
 
   <script>
@@ -183,7 +183,7 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>Tags</span>
+    <span>阅读笔记-Frame-wise Motion and Appearance for Real-time Multiple Object Tracking</span>
   </h1>
   <div class="article-top-meta">
     <span>
@@ -193,7 +193,7 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="tags"></span>
+        浏览 : <span class="article-timer" data-identity="Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking"></span>
       </span>
     
   </div>
@@ -202,7 +202,103 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      
+      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li><p>文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 </p>
+<ul>
+<li>LSTM 只处理了single object。(也有处理多目标的)</li>
+<li><p>Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）</p>
+</li>
+<li><p>单个box处理耗时严重，因为需要crop+resize+extract features</p>
+</li>
+</ul>
+</li>
+<li><p>文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)</p>
+<ul>
+<li>Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。</li>
+<li>Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配</li>
+</ul>
+</li>
+<li><p>在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。</p>
+</li>
+</ul>
+<hr>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>主要贡献点：</p>
+<blockquote>
+<p>1) Frame-wise Motion Fields (FMF) to represent the association among indefinite number of objects between frames.</p>
+<p>2) Frame-wise Apearance Feature (FAF) to provide Re-ID features to assist FMF-based object association.</p>
+<p>3) A simple yet effective inference algorithm to link the objects according to FMFs, and to fix a few uncertain associations using FAFs. </p>
+<p>4)  Experiments on the challenging MOT17 benchmark show that our method achieves real-time MOT with competitive performance as the state-of-the-art approaches.</p>
+</blockquote>
+<hr>
+<h3 id="Proposed-Method-FMA"><a href="#Proposed-Method-FMA" class="headerlink" title="Proposed Method (FMA)"></a>Proposed Method (FMA)</h3><p>FMA方法网络结构如下图：</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/architecture.png" alt="architecture"></p>
+<h4 id="Frame-wise-Motion-Fields"><a href="#Frame-wise-Motion-Fields" class="headerlink" title="Frame-wise Motion Fields"></a>Frame-wise Motion Fields</h4><p>使用$I_1, I_2\in R^{w\times h\times 3}$分别表示时间先后的两帧图像， $b_i$表示第$i$个关联目标的bounding box， 两帧中$b_i$的$x,y$坐标分别表示为$\mathcal{X}_1(b_i), \mathcal{Y}_1(b_i), \mathcal{X}_2(b_i), \mathcal{Y}_2(b_i)$ , FMFs计算了两帧图像$I_1, I_2$之间的四个运动场信息：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+F_x^1(b_i) &= \mathcal{X}_2(b_i) - \mathcal{X}_1(b_i),\\
+F_y^1(b_i) &= \mathcal{Y}_2(b_i) - \mathcal(Y)_1(b_i)\\
+F_x^2(b_i) &= -F_x^1(b_i),\\
+F_y^2(b_i) &= -F_y^1(b_i)
+\end{align}</script><p>这里预测了目标的双向motion向量，主要是为了让motion向量更加鲁棒。两方面考虑： 1）前后两帧的表观和上下文信息可能差异较大，拆开考虑更鲁棒；2）可以解决部分遮挡问题，前后分别预测。示例如下图所示</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/FMFs.png" alt="FMFs"></p>
+<p>注意上图(b)(d)中黑色十字标注的中心点.</p>
+<p>损失函数：</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{MSE} = \sum_{k=1}^2\sum_{b_i\in B}\Vert H_x^k(b_i)-F_x^k(b_i)\Vert_F^2 +  \Vert H_y^k(b_i)-F_y^k(b_i)\Vert_F^2</script><p>$B$是关联的目标的bounding box的集合。</p>
+<h4 id="Frame-wise-Appearance-Features"><a href="#Frame-wise-Appearance-Features" class="headerlink" title="Frame-wise Appearance Features"></a>Frame-wise Appearance Features</h4><p>FMF可以处理简单的情况，但是碰到拥挤或者干扰太多的时候就会预测失败，这时候希望通过FAF模块采用ReID实现匹配。</p>
+<p>传统的ReID方法将每一个目标crop出来进行resize之后放到网络中抽取特征，耗时严重。该方法中利用FAF模块直接从整张图像中抽取每个目标的特征，同时FAF和FMF模块可以共享部分网络层。从而前向推理速度加快的同时也能够规避目标个数不同带来的问题。</p>
+<p>给定同一个目标在两帧图像中的bounding boxes， FAF模块从FMF抽取的特征中crop patches，然后计算相似度。 在训练过程中同一个目标的不同特征concat一起作为正样本， 不同样本特征concat一起作为负样本。正负样本比例控制在$1:4$, 损失采用交叉熵损失</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{BCE} -\frac{1}{N}\sum_{j=1}^N\mathcal{S}_j\log h(p_j) + (1-\mathcal{S_j})\log (1-h(p_j))</script><p>$p_j, \mathcal{S_j}$表示样本和对应label。</p>
+<h4 id="Inference-Algorithm"><a href="#Inference-Algorithm" class="headerlink" title="Inference Algorithm"></a>Inference Algorithm</h4><p>$D=\{D_1, \cdots, D_N\}, T=\{T^1, \cdots, T^M\}$分别表示当前时刻的检测结果和已经存在的跟踪轨迹。 $IOU(\cdot)$表示IOU算子， $SIM(\cdot)$表示表观相似度。 Inference Algorithm分为3步：</p>
+<ul>
+<li>从former 到latter进行关联</li>
+<li>从latter 到former进行关联</li>
+<li>关联失败剩下的tracks和detections，利用FAFs进行关联。</li>
+</ul>
+<p>IOU和ReID的阈值分别为$\tau_1, \tau_2$</p>
+<hr>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><p>Datasets: MOT17 benchmark</p>
+<p>Setting: </p>
+<p>​    训练样本对的选择： 两种时间间隔 每一帧和每4zhen</p>
+<p>​    batchsize=4； lr=0.001, 70个epoch之后变为0.0001。</p>
+<p>​    测试时样本对：连续两帧</p>
+<p>​    $\tau_1=0.45, \tau_2=0.5$</p>
+<h5 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h5><ol>
+<li><p>MOT result of each component</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/table2.png" alt="tab2"></p>
+<p>训练的使用同时训练FAF和FMF模块，然后使用每个模块进行跟踪。</p>
+<p>性能差别不是很大，但速度差异明显。 作者认为FAF需要对图像进行crop因此速度较慢。</p>
+</li>
+<li><p>Effectiveness of FMFs</p>
+<p>根据FMFs, 利用IOU初步匹配效果如下：这张图分辨率太低，根本得不到什么结论。</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/FMFs_experiments.png" alt="FMFs"></p>
+</li>
+</ol>
+<h5 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h5><ol>
+<li><p>性能对比</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/table3.png" alt="table3"></p>
+<p>结论： a) 基于深度特征的方法性能优于传统特征； b）本文方法性能和MOTDT方法性能类似，但速度更快。</p>
+<p>分析原因：a)，训练数据太少，只在MOT17训练集上训练，b)该方法比较依赖于准确的检测结果</p>
+</li>
+<li><p>检测器对比</p>
+<p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/table4.png" alt="table4"></p>
+<p>结论： 本文方法更适合于准确地检测器。</p>
+</li>
+</ol>
+<hr>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><blockquote>
+<p>Practical and real-time MOT has to scale well with indefinite number of objects. This paper addresses this problem with frame-wise representations of object motion and appearance. In particular, FMFs simultaneously handle forward and backward motions of all bounding boxes in two input frames, which is the key to achieve real-time MOT inference. FAFs helps FMFs in handling some hard cases without significantly compromising the speed. The FMFs and FAFs are efficiently used in our inference algorithm, and achieved faster and more competitive results on the MOT17 benchmark. Our frame-wise representations are very efficient and general, making it possible to achieve real-time inference on more computationally expensive tracking tasks, such as instance segmentation tracking and scene mapping.</p>
+</blockquote>
+<hr>
+<h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>或许是因为preprint版本的原因，文章存在一些问题没有阐述明白。</p>
+<ol>
+<li>计算FMF的时候样本点的个数太少，过于稀疏是如何训练的？</li>
+<li>训练细节没有提供多少epoch等</li>
+<li>FAF进行crop时是从那一层crop的？</li>
+<li>一般而言训练reid网络时，单独采用交叉熵损失似乎都不能取得较好效果。</li>
+</ol>
+
     </div>
   </div>
   
@@ -213,7 +309,7 @@
         
           本文作者 : zhouzongwei <br>
         
-        原文链接 : <a href>http://yoursite.com/tags/index.html</a><br>
+        原文链接 : <a href>http://yoursite.com/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -270,6 +366,21 @@
     <div class="article-meta pull-left">
       <span>
         
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/MOT/">
+              #MOT
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/Motion-and-Appearance/">
+              #Motion and Appearance
+            </a>
+          </span>
+          
+        
       </span>
     </div>
     <div class="article-meta pull-right">
@@ -287,6 +398,18 @@
 
   <nav class="post-navigation">
     
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/" target="_self">阅读笔记-MOT16:A Benchmark for Multi-Object Tracking</a>
+      </div>
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/" target="_self">阅读笔记-High-speed tracking with kernelized correlation filters</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
@@ -385,7 +508,7 @@ const valineAPI = (() => {
 })()
 
 const calcAndWriteTimes = () => {
-  let isPost = false;
+  let isPost = true;
 
   let timerAllDOM = document.querySelectorAll(".article-timer");
 
