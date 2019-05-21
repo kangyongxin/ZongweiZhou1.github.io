@@ -223,11 +223,33 @@
     
     
     <entry>
-      <title>About</title>
+      <title>categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>friends</title>
+      <link href="/friends/index.html"/>
+      <url>/friends/index.html</url>
+      
+        <content type="html"><![CDATA[<p>TEST</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>about</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<p>Teis is a test</p>]]></content>
+        <content type="html"><![CDATA[<p>  这里编写您的网站/博客的相关介绍：联系方式、更新日志、甚至是您的个人简历。  BMW 主题会自动渲染此篇markdown，并且在 <code>http://localhost:4000/about/</code> 展示给您！ </p><p><strong>作者</strong>: 董沅鑫<br><strong>链接</strong>: <a href="https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/" target="_blank" rel="noopener">https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/</a><br><strong>来源</strong>: <a href="https://godbmw.com" target="_blank" rel="noopener">godbmw.com</a><br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>]]></content>
       
     </entry>
     
@@ -245,7 +267,7 @@
     
     
     <entry>
-      <title>Tags</title>
+      <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
       
