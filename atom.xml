@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-21T13:15:49.487Z</updated>
+  <updated>2019-05-21T15:06:36.496Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://yoursite.com/2019/05/21/repulsion-loss/"/>
     <id>http://yoursite.com/2019/05/21/repulsion-loss/</id>
     <published>2019-05-21T10:58:08.000Z</published>
-    <updated>2019-05-21T13:15:49.487Z</updated>
+    <updated>2019-05-21T15:06:36.496Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;尽管目标检测目前已经取得了非常好的性能，但是针对于特定领域内的跟踪方法还可以进一步探讨。本篇文章的研究重点在于更好的检测拥挤场景下的行人。&lt;/p&gt;
+&lt;p&gt;文章首先分析了拥挤场景下SOTA检测方法存在的问题，然后提出了一种针对于拥挤场景专门设计的回归损失。该损失函数的启发源主要有两点：预测框应该尽可能和目标接近；同时预测框应尽可能地狱surrounding目标区分。&lt;/p&gt;
+&lt;p&gt;实验证明本文提出的损失函数能够在拥挤场景中很大提升SOTA方法的性能。&lt;/p&gt;
     
     </summary>
     
@@ -47,17 +43,11 @@
     <link href="http://yoursite.com/2019/05/21/MOT-overview-3rd/"/>
     <id>http://yoursite.com/2019/05/21/MOT-overview-3rd/</id>
     <published>2019-05-21T03:37:35.000Z</published>
-    <updated>2019-05-21T09:38:38.686Z</updated>
+    <updated>2019-05-21T15:07:46.118Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;本文主要收集MOT领域的一些资源，
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;本文主要收集MOT领域的一些资源， 包括数据集，相关论文以及部分开源代码等。&lt;/p&gt;
     
     </summary>
     
@@ -75,17 +65,13 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-2nd/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-2nd/</id>
     <published>2019-05-20T08:30:36.000Z</published>
-    <updated>2019-05-21T03:34:42.782Z</updated>
+    <updated>2019-05-21T15:07:33.637Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;参考[SIGAI]公众号， &lt;img src=&quot;/2019/05/20/MOT-overview-2nd/sigai.png&quot;
-        
-      
+      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;参考[SIGAI]公众号， &lt;img src=&quot;/2019/05/20/MOT-overview-2nd/sigai.png&quot; alt=&quot;sigai&quot;&gt;&lt;/p&gt;
+&lt;p&gt;随着深度学习的推进，基于深度学习的检测器性能提升明显。因此目前的多目标跟踪算法大都基于tracking-by-detection框架。于是MOT任务可以转化为detection+ReID问题。&lt;/p&gt;
+&lt;p&gt;但相对于与传统的ReID问题，MOT问题会更加复杂。首先，MOT任务中目标轨迹变化频繁， 图像样本库的数量和种类都不固定； 其次，检测结果可能出现新的目标，也可能出现漏检；另外，检测图像并不像行人重识别中的查询图像都是比较准确地检测结果， MOT任务中行人检测往往混杂着误检或者不准确的检测，尤其是相互遮挡产生时。检测行人的不对齐，相互遮挡给目标匹配带来了极大的挑战性。&lt;/p&gt;
     
     </summary>
     
@@ -101,17 +87,12 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-1st/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-1st/</id>
     <published>2019-05-20T00:55:26.000Z</published>
-    <updated>2019-05-21T03:36:28.483Z</updated>
+    <updated>2019-05-21T15:08:19.206Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;参考SIGAI公众号推文，欢迎关注SIGAI公众号。&lt;/p&gt;
+&lt;p&gt;目标跟踪是计算机视觉中的一个重要任务。在计算机视觉的三层结构中，目标跟踪属于中间层，是其他高层任务，如动作识别、行为分析等，的基础。 其广泛应用于视频监控，人机交互，自动驾驶， 医学图像，虚拟现实和增强现实等现实场景中。目标跟踪根据每帧跟踪目标个数不同又划分为单目标跟踪(Single Object Tracking, SOT)和多目标跟踪(Multiple Object Tracking, MOT)。&lt;/p&gt;
     
     </summary>
     
@@ -129,17 +110,17 @@
     <link href="http://yoursite.com/2019/05/19/CLEAR/"/>
     <id>http://yoursite.com/2019/05/19/CLEAR/</id>
     <published>2019-05-19T10:23:48.000Z</published>
-    <updated>2019-05-19T12:53:14.513Z</updated>
+    <updated>2019-05-21T15:09:11.181Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;原发表于&lt;a
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;原发表于&lt;a href=&quot;https://www.cnblogs.com/YiXiaoZhou/p/5937980.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CLEAR&lt;/a&gt;， 参考之前笔记&lt;a href=&quot;https://zongweizhou1.github.io/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MOT16&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;多目标跟踪问题的评价指标应该能够评估三个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;目标是否都及时的找到。&lt;/li&gt;
+&lt;li&gt;目标跟踪到的位置和真实位置一致性程度。&lt;/li&gt;
+&lt;li&gt;是否能够保持跟踪的一致性。&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -183,17 +164,12 @@
     <link href="http://yoursite.com/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/"/>
     <id>http://yoursite.com/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/</id>
     <published>2019-05-18T12:41:36.000Z</published>
-    <updated>2019-05-19T04:40:33.921Z</updated>
+    <updated>2019-05-21T15:08:41.260Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;​       
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;​        KCF是一种鉴别式追踪方法，这类方法一般都是在追踪过程中训练一个目标检测器，使用目标检测器去检测下一帧预测位置是否是目标，然后再使用新检测结果去更新训练集进而更新目标检测器。而在训练目标检测器时一般选取目标区域为正样本，目标的周围区域为负样本，当然越靠近目标的区域分为正样本的概率越高。&lt;/p&gt;
+&lt;p&gt;​        本篇博文希望借这篇文章阐述KCF的原理和过程，以及存在的一些问题。&lt;/p&gt;
     
     </summary>
     
@@ -211,17 +187,27 @@
     <link href="http://yoursite.com/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/"/>
     <id>http://yoursite.com/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/</id>
     <published>2019-05-17T14:22:28.000Z</published>
-    <updated>2019-05-19T10:13:19.860Z</updated>
+    <updated>2019-05-21T15:08:58.162Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LSTM 只处理了single object。(也有处理多目标的)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单个box处理耗时严重，因为需要crop+resize+extract features&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。&lt;/li&gt;
+&lt;li&gt;Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
     
     </summary>
     
@@ -237,17 +223,11 @@
     <link href="http://yoursite.com/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/"/>
     <id>http://yoursite.com/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/</id>
     <published>2019-05-17T12:51:27.000Z</published>
-    <updated>2019-05-17T14:17:50.429Z</updated>
+    <updated>2019-05-21T15:08:29.824Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h4 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h4&gt;&lt;p&gt;这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16
-        
-      
+      &lt;h4 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h4&gt;&lt;p&gt;这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。&lt;/p&gt;
     
     </summary>
     
@@ -263,17 +243,11 @@
     <link href="http://yoursite.com/2019/05/17/hello-world/"/>
     <id>http://yoursite.com/2019/05/17/hello-world/</id>
     <published>2019-05-17T10:13:10.000Z</published>
-    <updated>2019-05-17T12:44:42.168Z</updated>
+    <updated>2019-05-21T15:09:20.908Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h3&gt;&lt;p&gt;使用Hexo +
-        
-      
+      &lt;h3 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h3&gt;&lt;p&gt;使用Hexo + GithubPage创建个人网站总结与验证。&lt;/p&gt;
     
     </summary>
     

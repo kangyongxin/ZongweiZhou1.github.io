@@ -124,6 +124,12 @@
                   </a>
                 </li>
               
+                <li>
+                  <a href="https://weibo.com/u/3231820650/home?wvr=5" target="_self">
+                    weibo
+                  </a>
+                </li>
+              
             </ul>
           
         </li>
@@ -202,9 +208,7 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>​        KCF是一种鉴别式追踪方法，这类方法一般都是在追踪过程中训练一个目标检测器，使用目标检测器去检测下一帧预测位置是否是目标，然后再使用新检测结果去更新训练集进而更新目标检测器。而在训练目标检测器时一般选取目标区域为正样本，目标的周围区域为负样本，当然越靠近目标的区域分为正样本的概率越高。</p>
-<p>​        本篇博文希望借这篇文章阐述KCF的原理和过程，以及存在的一些问题。</p>
-<p>原发表于<a href="https://www.cnblogs.com/YiXiaoZhou/p/5925019.html" target="_blank" rel="noopener">博客园</a></p>
+      <p>原发表于<a href="https://www.cnblogs.com/YiXiaoZhou/p/5925019.html" target="_blank" rel="noopener">博客园</a></p>
 <hr>
 <h3 id="Notations"><a href="#Notations" class="headerlink" title="Notations"></a>Notations</h3><p>​        论文中关于向量是行向量还是列向量总是指示不清楚，所以本文对变量符号统一之后进行推导，首先所有的小写字母均表示列向量，所有的大写字母表示矩阵，其中矩阵的每一行是一个样本，文中的函数除了$\phi(h)$是对行向量操作，其余都是对元素操做的，四则运算符号也都是针对元素操作的。还有所有对循环矩阵使用傅里叶变换时使用的生成向量都是循环矩阵的第一行向量，这点很重要。</p>
 <h3 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h3><ul>
@@ -391,7 +395,6 @@ K = F_2\cdot \text{diag}(\hat{K}')\cdot F_2^H</script><p>其中$F_2$是2D傅里�
 </ol>
 </li>
 </ul>
-
     </div>
   </div>
   
