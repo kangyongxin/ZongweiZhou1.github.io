@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-21T15:06:36.496Z</updated>
+  <updated>2019-05-22T01:04:34.755Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="http://yoursite.com/2019/05/21/repulsion-loss/"/>
     <id>http://yoursite.com/2019/05/21/repulsion-loss/</id>
     <published>2019-05-21T10:58:08.000Z</published>
-    <updated>2019-05-21T15:06:36.496Z</updated>
+    <updated>2019-05-22T01:04:34.755Z</updated>
     
     <summary type="html">
     
       &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;尽管目标检测目前已经取得了非常好的性能，但是针对于特定领域内的跟踪方法还可以进一步探讨。本篇文章的研究重点在于更好的检测拥挤场景下的行人。&lt;/p&gt;
-&lt;p&gt;文章首先分析了拥挤场景下SOTA检测方法存在的问题，然后提出了一种针对于拥挤场景专门设计的回归损失。该损失函数的启发源主要有两点：预测框应该尽可能和目标接近；同时预测框应尽可能地狱surrounding目标区分。&lt;/p&gt;
+&lt;p&gt;文章首先分析了拥挤场景下SOTA检测方法存在的问题，然后提出了一种针对于拥挤场景专门设计的回归损失。该损失函数的启发源主要有两点：预测框应该尽可能和目标接近；同时预测框应尽可能地与surrounding目标区分。&lt;/p&gt;
 &lt;p&gt;实验证明本文提出的损失函数能够在拥挤场景中很大提升SOTA方法的性能。&lt;/p&gt;
     
     </summary>
@@ -43,11 +43,11 @@
     <link href="http://yoursite.com/2019/05/21/MOT-overview-3rd/"/>
     <id>http://yoursite.com/2019/05/21/MOT-overview-3rd/</id>
     <published>2019-05-21T03:37:35.000Z</published>
-    <updated>2019-05-21T15:07:46.118Z</updated>
+    <updated>2019-05-22T00:49:12.058Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;本文主要收集MOT领域的一些资源， 包括数据集，相关论文以及部分开源代码等。&lt;/p&gt;
+      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;本文主要收集MOT领域的一些资源， 包括数据集，相关论文以及部分开源代码等。&lt;/p&gt;
     
     </summary>
     
@@ -65,13 +65,13 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-2nd/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-2nd/</id>
     <published>2019-05-20T08:30:36.000Z</published>
-    <updated>2019-05-21T15:07:33.637Z</updated>
+    <updated>2019-05-22T00:47:42.391Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;参考[SIGAI]公众号， &lt;img src=&quot;/2019/05/20/MOT-overview-2nd/sigai.png&quot; alt=&quot;sigai&quot;&gt;&lt;/p&gt;
-&lt;p&gt;随着深度学习的推进，基于深度学习的检测器性能提升明显。因此目前的多目标跟踪算法大都基于tracking-by-detection框架。于是MOT任务可以转化为detection+ReID问题。&lt;/p&gt;
+      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;随着深度学习的推进，基于深度学习的检测器性能提升明显。因此目前的多目标跟踪算法大都基于tracking-by-detection框架。于是MOT任务可以转化为detection+ReID问题。&lt;/p&gt;
 &lt;p&gt;但相对于与传统的ReID问题，MOT问题会更加复杂。首先，MOT任务中目标轨迹变化频繁， 图像样本库的数量和种类都不固定； 其次，检测结果可能出现新的目标，也可能出现漏检；另外，检测图像并不像行人重识别中的查询图像都是比较准确地检测结果， MOT任务中行人检测往往混杂着误检或者不准确的检测，尤其是相互遮挡产生时。检测行人的不对齐，相互遮挡给目标匹配带来了极大的挑战性。&lt;/p&gt;
+&lt;p&gt;本文将主要总结一些基于深度网络，希望更好解决MOT任务中ReID子任务的方法。&lt;/p&gt;
     
     </summary>
     
@@ -87,11 +87,11 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-1st/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-1st/</id>
     <published>2019-05-20T00:55:26.000Z</published>
-    <updated>2019-05-21T15:08:19.206Z</updated>
+    <updated>2019-05-22T00:48:56.463Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;参考SIGAI公众号推文，欢迎关注SIGAI公众号。&lt;/p&gt;
+      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;参考SIGAI公众号推文，欢迎关注SIGAI公众号。&lt;/p&gt;
 &lt;p&gt;目标跟踪是计算机视觉中的一个重要任务。在计算机视觉的三层结构中，目标跟踪属于中间层，是其他高层任务，如动作识别、行为分析等，的基础。 其广泛应用于视频监控，人机交互，自动驾驶， 医学图像，虚拟现实和增强现实等现实场景中。目标跟踪根据每帧跟踪目标个数不同又划分为单目标跟踪(Single Object Tracking, SOT)和多目标跟踪(Multiple Object Tracking, MOT)。&lt;/p&gt;
     
     </summary>
