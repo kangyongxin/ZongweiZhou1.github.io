@@ -43,7 +43,7 @@
     <link href="http://yoursite.com/2019/05/22/FANTrack/"/>
     <id>http://yoursite.com/2019/05/22/FANTrack/</id>
     <published>2019-05-22T14:44:12.000Z</published>
-    <updated>2019-05-22T14:51:07.490Z</updated>
+    <updated>2019-05-23T07:33:06.162Z</updated>
     
     <summary type="html">
     
@@ -59,6 +59,8 @@
       <category term="KITTI" scheme="http://yoursite.com/tags/KITTI/"/>
     
       <category term="Feature Association Network" scheme="http://yoursite.com/tags/Feature-Association-Network/"/>
+    
+      <category term="3D" scheme="http://yoursite.com/tags/3D/"/>
     
   </entry>
   
