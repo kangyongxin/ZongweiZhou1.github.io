@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-22T01:04:34.755Z</updated>
+  <updated>2019-05-23T02:09:02.865Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阅读笔记-Deep Affinity Network for Multiple Object Tracking</title>
+    <link href="http://yoursite.com/2019/05/22/SST-DAN/"/>
+    <id>http://yoursite.com/2019/05/22/SST-DAN/</id>
+    <published>2019-05-22T14:54:00.000Z</published>
+    <updated>2019-05-23T02:09:02.865Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/SST-DAN/DAN.png&quot; alt=&quot;DAN&quot;&gt;&lt;/p&gt;
+&lt;p&gt;MOT方法一般包含两个步骤:目标检测和数据关联。 目标检测这两年随着深度学习的发展而迅速发展，但是数据关联绝大多数还是采用hand crafted的方式将表观特征，运动信息，空间关系，group关系等进行结合。 这篇文章则是利用深度网络实现端到端的表观特征抽取和数据关联。 Deep Affinity Network(DAN)还实现了轨迹的初始化和终止等操作。在MOT15和MOT17，以及UA-DETRAC数据集上验证了有效性。这篇文章和上篇笔记FANTrack的出发点类似。&lt;/p&gt;
+&lt;p&gt;项目地址： &lt;a href=&quot;https://github.com/shijieS/SST.git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/shijieS/SST.git&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MOT" scheme="http://yoursite.com/tags/MOT/"/>
+    
+      <category term="Affinity Network" scheme="http://yoursite.com/tags/Affinity-Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读笔记-FANTrack：3DMulti-Object Tracking with Feature Association Network</title>
+    <link href="http://yoursite.com/2019/05/22/FANTrack/"/>
+    <id>http://yoursite.com/2019/05/22/FANTrack/</id>
+    <published>2019-05-22T14:44:12.000Z</published>
+    <updated>2019-05-22T14:51:07.490Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/FANTrack/siamese similarity.png&quot; alt=&quot;siamese similarity&quot;&gt;&lt;/p&gt;
+&lt;p&gt;目前大多数深度学习的方法主要基于特征的学习， 代价函数的设计，或者如何有效解决复杂的数据关联模型，很少有利用CNN网络端到端解决MOT的。本文提出使用CNN解决data association问题。该方案纯粹利用数据，从3D的角度实现全局的数据关联，同时处理noisy detections以及目标个数变化等问题。&lt;/p&gt;
+&lt;p&gt;文章提供代码： &lt;a href=&quot;https://git.uwaterloo.ca/wise-lab/fantrack&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://git.uwaterloo.ca/wise-lab/fantrack&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MOT" scheme="http://yoursite.com/tags/MOT/"/>
+    
+      <category term="KITTI" scheme="http://yoursite.com/tags/KITTI/"/>
+    
+      <category term="Feature Association Network" scheme="http://yoursite.com/tags/Feature-Association-Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阅读笔记-Relation Network for Object Detection</title>
+    <link href="http://yoursite.com/2019/05/22/relationNetwork/"/>
+    <id>http://yoursite.com/2019/05/22/relationNetwork/</id>
+    <published>2019-05-22T13:35:35.000Z</published>
+    <updated>2019-05-22T14:39:12.377Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/relationNetwork/title.png&quot; alt=&quot;title&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们都知道在目标检测领域，深度学习(RCNN系列，YOLO系列，SSD系列)方法取得了很大的成功，但是这些检测方法考虑的仅仅是目标的个体，而没有考虑一帧图像中目标之间的相互影响，所以本文提出一种&lt;strong&gt;object relation module&lt;/strong&gt; ,通过考虑目标集合中个体的交互关系来辅助目标的检测。该模块参数很少能够很方便的嵌入到已有的网络中，提高目标检测性能，另外本文使用该模块实现duplicate removal（NMS实现的功能），从而能够实现网络的end-to-end学习。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考_&lt;/strong&gt; : 在多目标跟踪问题中，一般的计算两个目标之间是否匹配的策略还是类似于ReID的方法，仅考虑两者之间的相似度，但是在跟踪的时空图中，两个观测的关系不仅仅取决于两者之间的关系，还取决于同时存在的其他目标之间的关系，所以多目标的匹配策略同样可以使用类似的relation module。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Relation Network" scheme="http://yoursite.com/tags/Relation-Network/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/tags/Object-Detection/"/>
+    
+      <category term="GCN" scheme="http://yoursite.com/tags/GCN/"/>
+    
+  </entry>
   
   <entry>
     <title>阅读笔记-Repulsion loss:Detecting Pedestrians in a Crowd</title>
@@ -138,17 +208,13 @@
     <link href="http://yoursite.com/2019/05/19/STRN/"/>
     <id>http://yoursite.com/2019/05/19/STRN/</id>
     <published>2019-05-19T10:20:40.000Z</published>
-    <updated>2019-05-20T08:29:10.921Z</updated>
+    <updated>2019-05-22T13:22:58.035Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;鲁棒的相似度度量是MOT取得较好性能的一个关键。而鲁棒的相似度度量应该能够变现表观、位置、时间和空间信息。由于这些线索差异性较大，不能直接组合在一起，一般的MOT方法会分别使用网络处理这些特征。&lt;/p&gt;
+&lt;p&gt;本文提出了一种Spatial-Temporal Relation network能够同时encode多种线索，并从时空关系中推理轨迹和检测的匹配关系。该网络能够端到端的训练并在MOT15-17benchmark上都取得了SOTA的性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/05/19/STRN/STRN.png&quot; alt=&quot;STRN&quot;&gt;&lt;/p&gt;
     
     </summary>
     

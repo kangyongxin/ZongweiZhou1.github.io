@@ -197,6 +197,34 @@
   <article class="posts-collapse">
     <header>
       <h2>
+        <a href="/2019/05/22/SST-DAN/">
+          <span>阅读笔记-Deep Affinity Network for Multiple Object Tracking</span>
+        </a>
+      </h2>
+      <div class="post-meta">
+        05-22
+      </div>
+    </header>
+  </article>
+  
+  
+  <article class="posts-collapse">
+    <header>
+      <h2>
+        <a href="/2019/05/22/FANTrack/">
+          <span>阅读笔记-FANTrack：3DMulti-Object Tracking with Feature Association Network</span>
+        </a>
+      </h2>
+      <div class="post-meta">
+        05-22
+      </div>
+    </header>
+  </article>
+  
+  
+  <article class="posts-collapse">
+    <header>
+      <h2>
         <a href="/2019/05/21/MOT-overview-3rd/">
           <span>多目标跟踪总结(下)-资源汇总</span>
         </a>
@@ -466,9 +494,25 @@ document.querySelector(".back-to-top").addEventListener("click", backToTop, fals
       clearInterval(fancyTimer);
     });
   }, 10);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 
 </html>

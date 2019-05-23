@@ -179,6 +179,219 @@
   
   <div class="post">
     <h1 class="article-title">
+      <a href="/2019/05/22/SST-DAN/">
+        <span>阅读笔记-Deep Affinity Network for Multiple Object Tracking</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-05-22
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-05-22
+      </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="SST-DAN"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p><img src="/2019/05/22/SST-DAN/DAN.png" alt="DAN"></p>
+<p>MOT方法一般包含两个步骤:目标检测和数据关联。 目标检测这两年随着深度学习的发展而迅速发展，但是数据关联绝大多数还是采用hand crafted的方式将表观特征，运动信息，空间关系，group关系等进行结合。 这篇文章则是利用深度网络实现端到端的表观特征抽取和数据关联。 Deep Affinity Network(DAN)还实现了轨迹的初始化和终止等操作。在MOT15和MOT17，以及UA-DETRAC数据集上验证了有效性。这篇文章和上篇笔记FANTrack的出发点类似。</p>
+<p>项目地址： <a href="https://github.com/shijieS/SST.git" target="_blank" rel="noopener">https://github.com/shijieS/SST.git</a></p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/MOT/">
+                  #MOT
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/Affinity-Network/">
+                  #Affinity Network
+                </a>
+              </span>
+            
+                    
+        </span>
+      </span></div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="SST-DAN"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/2019/05/22/FANTrack/">
+        <span>阅读笔记-FANTrack：3DMulti-Object Tracking with Feature Association Network</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-05-22
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-05-22
+      </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="FANTrack"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p><img src="/2019/05/22/FANTrack/siamese similarity.png" alt="siamese similarity"></p>
+<p>目前大多数深度学习的方法主要基于特征的学习， 代价函数的设计，或者如何有效解决复杂的数据关联模型，很少有利用CNN网络端到端解决MOT的。本文提出使用CNN解决data association问题。该方案纯粹利用数据，从3D的角度实现全局的数据关联，同时处理noisy detections以及目标个数变化等问题。</p>
+<p>文章提供代码： <a href="https://git.uwaterloo.ca/wise-lab/fantrack" target="_blank" rel="noopener">https://git.uwaterloo.ca/wise-lab/fantrack</a></p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/MOT/">
+                  #MOT
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/KITTI/">
+                  #KITTI
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/Feature-Association-Network/">
+                  #Feature Association Network
+                </a>
+              </span>
+            
+                    
+        </span>
+      </span></div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="FANTrack"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/2019/05/22/relationNetwork/">
+        <span>阅读笔记-Relation Network for Object Detection</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-05-22
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-05-22
+      </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="relationNetwork"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p><img src="/2019/05/22/relationNetwork/title.png" alt="title"></p>
+<p>我们都知道在目标检测领域，深度学习(RCNN系列，YOLO系列，SSD系列)方法取得了很大的成功，但是这些检测方法考虑的仅仅是目标的个体，而没有考虑一帧图像中目标之间的相互影响，所以本文提出一种<strong>object relation module</strong> ,通过考虑目标集合中个体的交互关系来辅助目标的检测。该模块参数很少能够很方便的嵌入到已有的网络中，提高目标检测性能，另外本文使用该模块实现duplicate removal（NMS实现的功能），从而能够实现网络的end-to-end学习。</p>
+<p><strong>思考_</strong> : 在多目标跟踪问题中，一般的计算两个目标之间是否匹配的策略还是类似于ReID的方法，仅考虑两者之间的相似度，但是在跟踪的时空图中，两个观测的关系不仅仅取决于两者之间的关系，还取决于同时存在的其他目标之间的关系，所以多目标的匹配策略同样可以使用类似的relation module。</p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/Relation-Network/">
+                  #Relation Network
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/Object-Detection/">
+                  #Object Detection
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/GCN/">
+                  #GCN
+                </a>
+              </span>
+            
+                    
+        </span>
+      </span></div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="relationNetwork"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
       <a href="/2019/05/21/repulsion-loss/">
         <span>阅读笔记-Repulsion loss:Detecting Pedestrians in a Crowd</span>
       </a>
@@ -559,7 +772,9 @@
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>鲁棒的相似度度量是MOT取得较好性能的一个关键。而鲁棒的相似度度量应该能够变现表观、位置、时间和空间信息。由于这些线索差异性较大，不能直接组合在一起，一般的MOT方法会分别使用网络处理这些特征。</p>
+<p>本文提出了一种Spatial-Temporal Relation network能够同时encode多种线索，并从时空关系中推理轨迹和检测的匹配关系。该网络能够端到端的训练并在MOT15-17benchmark上都取得了SOTA的性能。</p>
+<p><img src="/2019/05/19/STRN/STRN.png" alt="STRN"></p>
       </div>
     </div>
     <div class="article-footer">
@@ -668,214 +883,11 @@
     </div>
   </div>
   
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/">
-        <span>阅读笔记-Frame-wise Motion and Appearance for Real-time Multiple Object Tracking</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-05-17
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-05-17
-      </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking"></span>
-        </span>
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
-<li><p>文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 </p>
-<ul>
-<li>LSTM 只处理了single object。(也有处理多目标的)</li>
-<li><p>Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）</p>
-</li>
-<li><p>单个box处理耗时严重，因为需要crop+resize+extract features</p>
-</li>
-</ul>
-</li>
-<li><p>文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)</p>
-<ul>
-<li>Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。</li>
-<li>Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配</li>
-</ul>
-</li>
-<li><p>在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。</p></li></ul>
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/MOT/">
-                  #MOT
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/Motion-and-Appearance/">
-                  #Motion and Appearance
-                </a>
-              </span>
-            
-                    
-        </span>
-      </span></div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking"></span>
-          </span>
-        </div>
-      
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/">
-        <span>阅读笔记-MOT16:A Benchmark for Multi-Object Tracking</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-05-17
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-05-17
-      </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="MOT16-A-Benchmark-for-Multi-Object-Tracking"></span>
-        </span>
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。</p>
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/MOT/">
-                  #MOT
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/Benchmark/">
-                  #Benchmark
-                </a>
-              </span>
-            
-                    
-        </span>
-      </span></div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="MOT16-A-Benchmark-for-Multi-Object-Tracking"></span>
-          </span>
-        </div>
-      
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/2019/05/17/hello-world/">
-        <span>hello world</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-05-17
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-05-17
-      </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="hello-world"></span>
-        </span>
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>使用Hexo + GithubPage创建个人网站总结与验证。</p>
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/test/">
-                  #test
-                </a>
-              </span>
-            
-                    
-        </span>
-      </span></div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="hello-world"></span>
-          </span>
-        </div>
-      
-    </div>
-  </div>
-  
 
   <nav class="page-navigation">
     
+    
+      <a href="/page/2/">下一页</a>
     
   </nav>
 
@@ -1178,9 +1190,25 @@ document.querySelector(".back-to-top").addEventListener("click", backToTop, fals
       clearInterval(fancyTimer);
     });
   }, 10);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 
 </html>

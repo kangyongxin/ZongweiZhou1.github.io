@@ -432,6 +432,12 @@ L_{RepBox} = \frac{\sum_{i\neq j}Smooth_{ln}(IoU(B^{P_i}, B^{P_j}))}{\sum_{i\neq
       </div>
     
     
+      <div class="nav-next">
+        下一篇:
+        <a href="/2019/05/22/relationNetwork/" target="_self">阅读笔记-Relation Network for Object Detection</a>
+        <i class="iconfont icon-next"></i>
+      </div>
+    
   </nav>
 
   
@@ -756,9 +762,25 @@ document.querySelector(".back-to-top").addEventListener("click", backToTop, fals
       clearInterval(fancyTimer);
     });
   }, 10);
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
     
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 
 </html>
