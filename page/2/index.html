@@ -181,6 +181,78 @@
   
   <div class="post">
     <h1 class="article-title">
+      <a href="/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/">
+        <span>阅读笔记-High-speed tracking with kernelized correlation filters</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-05-18
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-05-18
+      </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="High-speed-tracking-with-kernelized-correlation-filters"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <p>​        KCF是一种鉴别式追踪方法，这类方法一般都是在追踪过程中训练一个目标检测器，使用目标检测器去检测下一帧预测位置是否是目标，然后再使用新检测结果去更新训练集进而更新目标检测器。而在训练目标检测器时一般选取目标区域为正样本，目标的周围区域为负样本，当然越靠近目标的区域分为正样本的概率越高。</p>
+<p>​        本篇博文希望借这篇文章阐述KCF的原理和过程，以及存在的一些问题。</p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/correlation-filter/">
+                  #correlation filter
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/kernelized-correlation-filter/">
+                  #kernelized correlation filter
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/tracking/">
+                  #tracking
+                </a>
+              </span>
+            
+                    
+        </span>
+      </span></div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="High-speed-tracking-with-kernelized-correlation-filters"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
       <a href="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/">
         <span>阅读笔记-Frame-wise Motion and Appearance for Real-time Multiple Object Tracking</span>
       </a>
@@ -207,23 +279,8 @@
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
-<li><p>文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 </p>
-<ul>
-<li>LSTM 只处理了single object。(也有处理多目标的)</li>
-<li><p>Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）</p>
-</li>
-<li><p>单个box处理耗时严重，因为需要crop+resize+extract features</p>
-</li>
-</ul>
-</li>
-<li><p>文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)</p>
-<ul>
-<li>Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。</li>
-<li>Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配</li>
-</ul>
-</li>
-<li><p>在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。</p></li></ul>
+        <p><img src="/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/architecture.png" alt="architecture"></p>
+<p>文章同时利用了光流信息和表观信息去解决多目标跟踪任务。对于简单的目标使用Frame-wise Motion Field(FMF)进行跟踪，而对于复杂的目标使用Frame-wise Appearance Features(FAF)进行reid的匹配。 两个模块集成在一起实现端到端的训练，同时也缩短了inference的时间。</p>
       </div>
     </div>
     <div class="article-footer">
@@ -288,7 +345,8 @@
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。</p>
+        <p><img src="/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/datasets_overview.png" alt="dataset overview"></p>
+<p>这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。</p>
       </div>
     </div>
     <div class="article-footer">

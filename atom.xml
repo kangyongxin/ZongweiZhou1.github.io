@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-23T02:09:02.865Z</updated>
+  <updated>2019-05-23T11:57:00.092Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>阅读笔记-Online Multi-Target Tracking Using Recurrent Neural Networks</title>
+    <link href="http://yoursite.com/2019/05/23/MOT-RNN/"/>
+    <id>http://yoursite.com/2019/05/23/MOT-RNN/</id>
+    <published>2019-05-23T08:00:53.000Z</published>
+    <updated>2019-05-23T11:57:00.092Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文第一次提出利用深度网络端到端的实现多目标跟踪。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2019/05/23/MOT-RNN/personal_website/MyPages/source/_posts/MOT-RNN/architecture.png&quot; alt=&quot;architecture&quot;&gt;&lt;/p&gt;
+&lt;p&gt;真实环境中处理多目标跟踪任务具有一些难点。首先轨迹的个数不定，轨迹的起点和重点不定； 其次轨迹中目标的状态是连续变量，比如位置，尺寸，置信度等，最后一般解决多目标跟踪任务最终转化为组合优化问题，而组合优化问题是离散空间求解问题。&lt;/p&gt;
+&lt;p&gt;这篇文章和之前的两篇笔记一样，都是利用网络去解决&lt;strong&gt;数据关联&lt;/strong&gt;问题。&lt;/p&gt;
+&lt;p&gt;项目地址： &lt;a href=&quot;https://bitbucket.org/amilan/rnntracking&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://bitbucket.org/amilan/rnntracking&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MOT" scheme="http://yoursite.com/tags/MOT/"/>
+    
+      <category term="RNN" scheme="http://yoursite.com/tags/RNN/"/>
+    
+      <category term="data assocition using network" scheme="http://yoursite.com/tags/data-assocition-using-network/"/>
+    
+  </entry>
+  
+  <entry>
     <title>阅读笔记-Deep Affinity Network for Multiple Object Tracking</title>
     <link href="http://yoursite.com/2019/05/22/SST-DAN/"/>
     <id>http://yoursite.com/2019/05/22/SST-DAN/</id>
     <published>2019-05-22T14:54:00.000Z</published>
-    <updated>2019-05-23T02:09:02.865Z</updated>
+    <updated>2019-05-23T11:58:38.881Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/SST-DAN/DAN.png&quot; alt=&quot;DAN&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/22/SST-DAN/personal_website/MyPages/source/_posts/SST-DAN/DAN.png&quot; alt=&quot;DAN&quot;&gt;&lt;/p&gt;
 &lt;p&gt;MOT方法一般包含两个步骤:目标检测和数据关联。 目标检测这两年随着深度学习的发展而迅速发展，但是数据关联绝大多数还是采用hand crafted的方式将表观特征，运动信息，空间关系，group关系等进行结合。 这篇文章则是利用深度网络实现端到端的表观特征抽取和数据关联。 Deep Affinity Network(DAN)还实现了轨迹的初始化和终止等操作。在MOT15和MOT17，以及UA-DETRAC数据集上验证了有效性。这篇文章和上篇笔记FANTrack的出发点类似。&lt;/p&gt;
 &lt;p&gt;项目地址： &lt;a href=&quot;https://github.com/shijieS/SST.git&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/shijieS/SST.git&lt;/a&gt;&lt;/p&gt;
     
@@ -43,11 +69,11 @@
     <link href="http://yoursite.com/2019/05/22/FANTrack/"/>
     <id>http://yoursite.com/2019/05/22/FANTrack/</id>
     <published>2019-05-22T14:44:12.000Z</published>
-    <updated>2019-05-23T07:33:06.162Z</updated>
+    <updated>2019-05-23T11:48:53.220Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/FANTrack/siamese similarity.png&quot; alt=&quot;siamese similarity&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/22/FANTrack/siamese similarity.png&quot; alt=&quot;siamese similarity&quot;&gt;&lt;/p&gt;
 &lt;p&gt;目前大多数深度学习的方法主要基于特征的学习， 代价函数的设计，或者如何有效解决复杂的数据关联模型，很少有利用CNN网络端到端解决MOT的。本文提出使用CNN解决data association问题。该方案纯粹利用数据，从3D的角度实现全局的数据关联，同时处理noisy detections以及目标个数变化等问题。&lt;/p&gt;
 &lt;p&gt;文章提供代码： &lt;a href=&quot;https://git.uwaterloo.ca/wise-lab/fantrack&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://git.uwaterloo.ca/wise-lab/fantrack&lt;/a&gt;&lt;/p&gt;
     
@@ -69,13 +95,12 @@
     <link href="http://yoursite.com/2019/05/22/relationNetwork/"/>
     <id>http://yoursite.com/2019/05/22/relationNetwork/</id>
     <published>2019-05-22T13:35:35.000Z</published>
-    <updated>2019-05-22T14:39:12.377Z</updated>
+    <updated>2019-05-23T11:57:48.389Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/2019/05/22/relationNetwork/title.png&quot; alt=&quot;title&quot;&gt;&lt;/p&gt;
-&lt;p&gt;我们都知道在目标检测领域，深度学习(RCNN系列，YOLO系列，SSD系列)方法取得了很大的成功，但是这些检测方法考虑的仅仅是目标的个体，而没有考虑一帧图像中目标之间的相互影响，所以本文提出一种&lt;strong&gt;object relation module&lt;/strong&gt; ,通过考虑目标集合中个体的交互关系来辅助目标的检测。该模块参数很少能够很方便的嵌入到已有的网络中，提高目标检测性能，另外本文使用该模块实现duplicate removal（NMS实现的功能），从而能够实现网络的end-to-end学习。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;思考_&lt;/strong&gt; : 在多目标跟踪问题中，一般的计算两个目标之间是否匹配的策略还是类似于ReID的方法，仅考虑两者之间的相似度，但是在跟踪的时空图中，两个观测的关系不仅仅取决于两者之间的关系，还取决于同时存在的其他目标之间的关系，所以多目标的匹配策略同样可以使用类似的relation module。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/22/relationNetwork/title.png&quot; alt=&quot;title&quot;&gt;&lt;/p&gt;
+&lt;p&gt;在目标检测领域，深度学习(RCNN系列，YOLO系列，SSD系列)方法取得了很大的成功，但是这些检测方法考虑的仅仅是目标的个体，而没有考虑一帧图像中目标之间的相互影响，所以本文提出一种&lt;strong&gt;object relation module&lt;/strong&gt; ,通过考虑目标集合中个体的交互关系来辅助目标的检测。该模块参数很少能够很方便的嵌入到已有的网络中，提高目标检测性能，另外本文使用该模块实现duplicate removal（NMS实现的功能），从而能够实现网络的end-to-end学习。&lt;/p&gt;
     
     </summary>
     
@@ -93,11 +118,11 @@
     <link href="http://yoursite.com/2019/05/21/repulsion-loss/"/>
     <id>http://yoursite.com/2019/05/21/repulsion-loss/</id>
     <published>2019-05-21T10:58:08.000Z</published>
-    <updated>2019-05-22T01:04:34.755Z</updated>
+    <updated>2019-05-23T11:58:14.488Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;尽管目标检测目前已经取得了非常好的性能，但是针对于特定领域内的跟踪方法还可以进一步探讨。本篇文章的研究重点在于更好的检测拥挤场景下的行人。&lt;/p&gt;
+      &lt;p&gt;尽管目标检测目前已经取得了非常好的性能，但是针对于特定领域内的跟踪方法还可以进一步探讨。本篇文章的研究重点在于更好的检测拥挤场景下的行人。&lt;/p&gt;
 &lt;p&gt;文章首先分析了拥挤场景下SOTA检测方法存在的问题，然后提出了一种针对于拥挤场景专门设计的回归损失。该损失函数的启发源主要有两点：预测框应该尽可能和目标接近；同时预测框应尽可能地与surrounding目标区分。&lt;/p&gt;
 &lt;p&gt;实验证明本文提出的损失函数能够在拥挤场景中很大提升SOTA方法的性能。&lt;/p&gt;
     
@@ -115,11 +140,11 @@
     <link href="http://yoursite.com/2019/05/21/MOT-overview-3rd/"/>
     <id>http://yoursite.com/2019/05/21/MOT-overview-3rd/</id>
     <published>2019-05-21T03:37:35.000Z</published>
-    <updated>2019-05-22T00:49:12.058Z</updated>
+    <updated>2019-05-23T11:56:36.208Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;本文主要收集MOT领域的一些资源， 包括数据集，相关论文以及部分开源代码等。&lt;/p&gt;
+      &lt;p&gt;本文主要收集MOT领域的一些资源， 包括数据集，相关论文以及部分开源代码等。&lt;/p&gt;
     
     </summary>
     
@@ -137,11 +162,11 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-2nd/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-2nd/</id>
     <published>2019-05-20T08:30:36.000Z</published>
-    <updated>2019-05-22T00:47:42.391Z</updated>
+    <updated>2019-05-23T11:56:18.936Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;随着深度学习的推进，基于深度学习的检测器性能提升明显。因此目前的多目标跟踪算法大都基于tracking-by-detection框架。于是MOT任务可以转化为detection+ReID问题。&lt;/p&gt;
+      &lt;p&gt;随着深度学习的推进，基于深度学习的检测器性能提升明显。因此目前的多目标跟踪算法大都基于tracking-by-detection框架。于是MOT任务可以转化为detection+ReID问题。&lt;/p&gt;
 &lt;p&gt;但相对于与传统的ReID问题，MOT问题会更加复杂。首先，MOT任务中目标轨迹变化频繁， 图像样本库的数量和种类都不固定； 其次，检测结果可能出现新的目标，也可能出现漏检；另外，检测图像并不像行人重识别中的查询图像都是比较准确地检测结果， MOT任务中行人检测往往混杂着误检或者不准确的检测，尤其是相互遮挡产生时。检测行人的不对齐，相互遮挡给目标匹配带来了极大的挑战性。&lt;/p&gt;
 &lt;p&gt;本文将主要总结一些基于深度网络，希望更好解决MOT任务中ReID子任务的方法。&lt;/p&gt;
     
@@ -159,12 +184,11 @@
     <link href="http://yoursite.com/2019/05/20/MOT-overview-1st/"/>
     <id>http://yoursite.com/2019/05/20/MOT-overview-1st/</id>
     <published>2019-05-20T00:55:26.000Z</published>
-    <updated>2019-05-22T00:48:56.463Z</updated>
+    <updated>2019-05-23T11:54:33.622Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;导言&quot;&gt;&lt;a href=&quot;#导言&quot; class=&quot;headerlink&quot; title=&quot;导言&quot;&gt;&lt;/a&gt;导言&lt;/h3&gt;&lt;p&gt;参考SIGAI公众号推文，欢迎关注SIGAI公众号。&lt;/p&gt;
-&lt;p&gt;目标跟踪是计算机视觉中的一个重要任务。在计算机视觉的三层结构中，目标跟踪属于中间层，是其他高层任务，如动作识别、行为分析等，的基础。 其广泛应用于视频监控，人机交互，自动驾驶， 医学图像，虚拟现实和增强现实等现实场景中。目标跟踪根据每帧跟踪目标个数不同又划分为单目标跟踪(Single Object Tracking, SOT)和多目标跟踪(Multiple Object Tracking, MOT)。&lt;/p&gt;
+      &lt;p&gt;这篇文章主要阐述了多目标跟踪任务的定义，以及多目标跟踪任务与单目标跟踪、身份重识别等任务的关系，并分析了多目标跟踪任务面临的挑战。总结了一些传统的非深度多目标跟踪方法的基本原理。&lt;/p&gt;
     
     </summary>
     
@@ -182,17 +206,11 @@
     <link href="http://yoursite.com/2019/05/19/CLEAR/"/>
     <id>http://yoursite.com/2019/05/19/CLEAR/</id>
     <published>2019-05-19T10:23:48.000Z</published>
-    <updated>2019-05-21T15:09:11.181Z</updated>
+    <updated>2019-05-23T11:47:24.447Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;原发表于&lt;a href=&quot;https://www.cnblogs.com/YiXiaoZhou/p/5937980.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CLEAR&lt;/a&gt;， 参考之前笔记&lt;a href=&quot;https://zongweizhou1.github.io/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MOT16&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;多目标跟踪问题的评价指标应该能够评估三个方面：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;目标是否都及时的找到。&lt;/li&gt;
-&lt;li&gt;目标跟踪到的位置和真实位置一致性程度。&lt;/li&gt;
-&lt;li&gt;是否能够保持跟踪的一致性。&lt;/li&gt;
-&lt;/ul&gt;
+      &lt;p&gt;这篇笔记主要总结了MOT任务中常用的度量指标，其表示的意义和计算方式。&lt;/p&gt;
     
     </summary>
     
@@ -210,13 +228,13 @@
     <link href="http://yoursite.com/2019/05/19/STRN/"/>
     <id>http://yoursite.com/2019/05/19/STRN/</id>
     <published>2019-05-19T10:20:40.000Z</published>
-    <updated>2019-05-22T13:22:58.035Z</updated>
+    <updated>2019-05-23T12:00:24.280Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;鲁棒的相似度度量是MOT取得较好性能的一个关键。而鲁棒的相似度度量应该能够变现表观、位置、时间和空间信息。由于这些线索差异性较大，不能直接组合在一起，一般的MOT方法会分别使用网络处理这些特征。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/19/STRN/strn_architecture.png&quot; alt=&quot;strn_architecture&quot;&gt;&lt;/p&gt;
+&lt;p&gt;鲁棒的相似度度量是MOT取得较好性能的一个关键。而鲁棒的相似度度量应该能够变现表观、位置、时间和空间信息。由于这些线索差异性较大，不能直接组合在一起，一般的MOT方法会分别使用网络处理这些特征。&lt;/p&gt;
 &lt;p&gt;本文提出了一种Spatial-Temporal Relation network能够同时encode多种线索，并从时空关系中推理轨迹和检测的匹配关系。该网络能够端到端的训练并在MOT15-17benchmark上都取得了SOTA的性能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2019/05/19/STRN/STRN.png&quot; alt=&quot;STRN&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -232,11 +250,11 @@
     <link href="http://yoursite.com/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/"/>
     <id>http://yoursite.com/2019/05/18/High-speed-tracking-with-kernelized-correlation-filters/</id>
     <published>2019-05-18T12:41:36.000Z</published>
-    <updated>2019-05-21T15:08:41.260Z</updated>
+    <updated>2019-05-23T11:52:24.488Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;p&gt;​        KCF是一种鉴别式追踪方法，这类方法一般都是在追踪过程中训练一个目标检测器，使用目标检测器去检测下一帧预测位置是否是目标，然后再使用新检测结果去更新训练集进而更新目标检测器。而在训练目标检测器时一般选取目标区域为正样本，目标的周围区域为负样本，当然越靠近目标的区域分为正样本的概率越高。&lt;/p&gt;
+      &lt;p&gt;​        KCF是一种鉴别式追踪方法，这类方法一般都是在追踪过程中训练一个目标检测器，使用目标检测器去检测下一帧预测位置是否是目标，然后再使用新检测结果去更新训练集进而更新目标检测器。而在训练目标检测器时一般选取目标区域为正样本，目标的周围区域为负样本，当然越靠近目标的区域分为正样本的概率越高。&lt;/p&gt;
 &lt;p&gt;​        本篇博文希望借这篇文章阐述KCF的原理和过程，以及存在的一些问题。&lt;/p&gt;
     
     </summary>
@@ -255,27 +273,12 @@
     <link href="http://yoursite.com/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/"/>
     <id>http://yoursite.com/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/</id>
     <published>2019-05-17T14:22:28.000Z</published>
-    <updated>2019-05-21T15:08:58.162Z</updated>
+    <updated>2019-05-23T11:51:29.769Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Abstract&quot;&gt;&lt;a href=&quot;#Abstract&quot; class=&quot;headerlink&quot; title=&quot;Abstract&quot;&gt;&lt;/a&gt;Abstract&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;LSTM 只处理了single object。(也有处理多目标的)&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;单个box处理耗时严重，因为需要crop+resize+extract features&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。&lt;/li&gt;
-&lt;li&gt;Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/17/Frame-wise-Motion-and-Appearance-for-Real-time-Multiple-Object-Tracking/architecture.png&quot; alt=&quot;architecture&quot;&gt;&lt;/p&gt;
+&lt;p&gt;文章同时利用了光流信息和表观信息去解决多目标跟踪任务。对于简单的目标使用Frame-wise Motion Field(FMF)进行跟踪，而对于复杂的目标使用Frame-wise Appearance Features(FAF)进行reid的匹配。 两个模块集成在一起实现端到端的训练，同时也缩短了inference的时间。&lt;/p&gt;
     
     </summary>
     
@@ -291,11 +294,12 @@
     <link href="http://yoursite.com/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/"/>
     <id>http://yoursite.com/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/</id>
     <published>2019-05-17T12:51:27.000Z</published>
-    <updated>2019-05-21T15:08:29.824Z</updated>
+    <updated>2019-05-23T11:52:58.311Z</updated>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h4&gt;&lt;p&gt;这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2019/05/17/MOT16-A-Benchmark-for-Multi-Object-Tracking/datasets_overview.png&quot; alt=&quot;dataset overview&quot;&gt;&lt;/p&gt;
+&lt;p&gt;这篇文章主要介绍了MOT的2016 benchmark库。相对于MOT15的benchmark而言，MOT16 benchmark视频数据标注更加规范严格，除了标注pedestrian之外，还标注了其他部分类别，同时给出了每个标注的可见度。新的benchmark数据也更加多样。&lt;/p&gt;
     
     </summary>
     

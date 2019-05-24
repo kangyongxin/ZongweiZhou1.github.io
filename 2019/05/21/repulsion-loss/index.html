@@ -208,7 +208,10 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <hr>
+      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>尽管目标检测目前已经取得了非常好的性能，但是针对于特定领域内的跟踪方法还可以进一步探讨。本篇文章的研究重点在于更好的检测拥挤场景下的行人。</p>
+<p>文章首先分析了拥挤场景下SOTA检测方法存在的问题，然后提出了一种针对于拥挤场景专门设计的回归损失。该损失函数的启发源主要有两点：预测框应该尽可能和目标接近；同时预测框应尽可能地与surrounding目标区分。</p>
+<p>实验证明本文提出的损失函数能够在拥挤场景中很大提升SOTA方法的性能。</p>
+<hr>
 <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>一般情形下，遮挡可以分为两种： 类间遮挡(inter-class occlusion)和类内遮挡(intra-class occlusion). 在行人检测任务上， inter-class occlusion例如行人被汽车，树木等他类遮挡；intra-class occlusion 如人与人之间的遮挡。</p>
 <p>crowd occlusion对行人检测的影响主要体现在增加了pedestrian定位的难度。例如两个目标$T,B$发生了遮挡， 那么检测器就会因为这两个target overlap部分的特征相同而出现较大的误差。导致$T$的预测窗口可能更偏向于$B$ 或者相反。更糟糕的是，一般detection之后的结果需要进行NMS操作，NMS操作可能凭IOU将发生shift的预测框直接剔除，导致miss detection的产生。所以crowd occlusion环境对于NMS的阈值较敏感。 阈值较高剔除的框越少可能产生的false positive越多， 阈值较小剔除较多导致miss detections很多。</p>
 <p>传统的检测方法使用box regression技术localized 目标，具体而言就是让proposals和ground-truth之间的距离尽可能地接近，距离度量可以使用$\text{Smooth}_{L1}$ 或者IoU等。但是这种约束只是让predict尽可能地和target接近，而并没有考虑到target周围的影响。如下图所示， 一般检测方法只越是红色虚线框与棕色框尽可能接近，而对于和蓝色框的关系不加约束。本文解决的正是这个问题。</p>

@@ -208,7 +208,9 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="Object-Relation-Module-ORM"><a href="#Object-Relation-Module-ORM" class="headerlink" title="Object Relation Module (ORM)"></a>Object Relation Module (ORM)</h3><p><img src="/2019/05/22/relationNetwork/pipeline.png" alt="pipeline"></p>
+      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>我们都知道在目标检测领域，深度学习(RCNN系列，YOLO系列，SSD系列)方法取得了很大的成功，但是这些检测方法考虑的仅仅是目标的个体，而没有考虑一帧图像中目标之间的相互影响，所以本文提出一种<strong>object relation module</strong> ,通过考虑目标集合中个体的交互关系来辅助目标的检测。该模块参数很少能够很方便的嵌入到已有的网络中，提高目标检测性能，另外本文使用该模块实现duplicate removal（NMS实现的功能），从而能够实现网络的end-to-end学习。</p>
+<p><strong>思考_</strong> : 在多目标跟踪问题中，一般的计算两个目标之间是否匹配的策略还是类似于ReID的方法，仅考虑两者之间的相似度，但是在跟踪的时空图中，两个观测的关系不仅仅取决于两者之间的关系，还取决于同时存在的其他目标之间的关系，所以多目标的匹配策略同样可以使用类似的relation module。</p>
+<h3 id="Object-Relation-Module-ORM"><a href="#Object-Relation-Module-ORM" class="headerlink" title="Object Relation Module (ORM)"></a>Object Relation Module (ORM)</h3><p><img src="/2019/05/22/relationNetwork/pipeline.png" alt="pipeline"></p>
 <p>文章在处理object之间关系时主要借鉴和继承了google的关于attention的开山之作</p>
 <blockquote>
 <p>Attention is all your need</p>

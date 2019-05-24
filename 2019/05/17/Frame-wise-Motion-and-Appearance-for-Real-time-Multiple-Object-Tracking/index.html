@@ -208,8 +208,25 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      
-
+      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
+<li><p>文章认为MOT当前的主要挑战在于“不同帧中目标个数不定带来算法效率下降”。 </p>
+<ul>
+<li>LSTM 只处理了single object。(也有处理多目标的)</li>
+<li><p>Re-ID exhausitively 匹配目标表观。（这个不客观，大多数方法都会通过先验条件约束范围）</p>
+</li>
+<li><p>单个box处理耗时严重，因为需要crop+resize+extract features</p>
+</li>
+</ul>
+</li>
+<li><p>文章针对该问题提出一种同时 关联不定数目目标的Deep Neural Network (DNN)</p>
+<ul>
+<li>Frame-wise Motion Fields (FMF) 估计目标运动位置，进行初步匹配。</li>
+<li>Frame-wise Apearance Features(FAF)针对于FMF失败情形，采用表观再次匹配</li>
+</ul>
+</li>
+<li><p>在MOT17 benchmark上保持SOTA性能同时，速度大幅提升。</p>
+</li>
+</ul>
 <hr>
 <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>主要贡献点：</p>
 <blockquote>

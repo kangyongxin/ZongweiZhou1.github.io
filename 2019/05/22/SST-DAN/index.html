@@ -208,7 +208,10 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul>
+      <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p><img src="/2019/05/22/SST-DAN/DAN.png" alt="DAN"></p>
+<p>MOT方法一般包含两个步骤:目标检测和数据关联。 目标检测这两年随着深度学习的发展而迅速发展，但是数据关联绝大多数还是采用hand crafted的方式将表观特征，运动信息，空间关系，group关系等进行结合。 这篇文章则是利用深度网络实现端到端的表观特征抽取和数据关联。 Deep Affinity Network(DAN)还实现了轨迹的初始化和终止等操作。在MOT15和MOT17，以及UA-DETRAC数据集上验证了有效性。这篇文章和上篇笔记FANTrack的出发点类似。</p>
+<p>项目地址： <a href="https://github.com/shijieS/SST.git" target="_blank" rel="noopener">https://github.com/shijieS/SST.git</a></p>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul>
 <li><p><strong>符号定义：</strong></p>
 <ul>
 <li>$I_t$ 视频的第$t$帧</li>
@@ -403,6 +406,12 @@
         <a href="/2019/05/22/FANTrack/" target="_self">阅读笔记-FANTrack：3DMulti-Object Tracking with Feature Association Network</a>
       </div>
     
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/2019/05/23/MOT-RNN/" target="_self">阅读笔记-Online Multi-Target Tracking Using Recurrent Neural Networks</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
