@@ -179,6 +179,71 @@
   
   <div class="post">
     <h1 class="article-title">
+      <a href="/2019/05/24/pycharm-github/">
+        <span>工具使用-pycharm+github push/pull/branch/merge操作</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-05-24
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-05-24
+      </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="pycharm-github"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <p>一直记不住使用git上传下载github代码的指令，不过幸好现在使用pycharm管理项目代码，pycharm对guihub的版本控制我觉得还是挺适合我的。所以这里记录下如何使用pycharm + github进行项目的版本控制。</p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/pycharm/">
+                  #pycharm
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/github/">
+                  #github
+                </a>
+              </span>
+            
+                    
+        </span>
+      </span></div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="pycharm-github"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
       <a href="/2019/05/23/MOT-RNN/">
         <span>阅读笔记-Online Multi-Target Tracking Using Recurrent Neural Networks</span>
       </a>
@@ -206,7 +271,7 @@
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
         <p>本文第一次提出利用深度网络端到端的实现多目标跟踪。</p>
-<p><img src="/2019/05/23/MOT-RNN/personal_website/MyPages/source/_posts/MOT-RNN/architecture.png" alt="architecture"></p>
+<p><img src="/2019/05/23/MOT-RNN/architecture.png" alt="architecture"></p>
 <p>真实环境中处理多目标跟踪任务具有一些难点。首先轨迹的个数不定，轨迹的起点和重点不定； 其次轨迹中目标的状态是连续变量，比如位置，尺寸，置信度等，最后一般解决多目标跟踪任务最终转化为组合优化问题，而组合优化问题是离散空间求解问题。</p>
 <p>这篇文章和之前的两篇笔记一样，都是利用网络去解决<strong>数据关联</strong>问题。</p>
 <p>项目地址： <a href="https://bitbucket.org/amilan/rnntracking" target="_blank" rel="noopener">https://bitbucket.org/amilan/rnntracking</a></p>
@@ -280,7 +345,7 @@
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <p><img src="/2019/05/22/SST-DAN/personal_website/MyPages/source/_posts/SST-DAN/DAN.png" alt="DAN"></p>
+        <p><img src="/2019/05/22/SST-DAN/DAN.png" alt="DAN"></p>
 <p>MOT方法一般包含两个步骤:目标检测和数据关联。 目标检测这两年随着深度学习的发展而迅速发展，但是数据关联绝大多数还是采用hand crafted的方式将表观特征，运动信息，空间关系，group关系等进行结合。 这篇文章则是利用深度网络实现端到端的表观特征抽取和数据关联。 Deep Affinity Network(DAN)还实现了轨迹的初始化和终止等操作。在MOT15和MOT17，以及UA-DETRAC数据集上验证了有效性。这篇文章和上篇笔记FANTrack的出发点类似。</p>
 <p>项目地址： <a href="https://github.com/shijieS/SST.git" target="_blank" rel="noopener">https://github.com/shijieS/SST.git</a></p>
       </div>
@@ -811,73 +876,6 @@
         <div class="article-meta pull-right">
           <span class="pc-view">
             <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="CLEAR"></span>
-          </span>
-        </div>
-      
-    </div>
-  </div>
-  
-  <div class="post">
-    <h1 class="article-title">
-      <a href="/2019/05/19/STRN/">
-        <span>阅读笔记-Spatial-Temporal Relation Networks for Multi-Object Tracking</span>
-      </a>
-    </h1>
-    <!-- PC端文章信息 -->
-    <div class="article-top-meta pc-view">
-      <span>
-        发布时间 : 2019-05-19
-      </span>
-    </div>
-    <!-- 移动端文章信息 -->
-    <div class="article-top-meta mobile-view">
-      <span>
-        发布 : 2019-05-19
-      </span>
-      
-      
-        <span>
-          浏览 : <span class="article-timer" data-identity="STRN"></span>
-        </span>
-      
-    </div>
-    
-    <!-- 文章简介 -->
-    <div class="article-content">
-      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        <p><img src="/2019/05/19/STRN/strn_architecture.png" alt="strn_architecture"></p>
-<p>鲁棒的相似度度量是MOT取得较好性能的一个关键。而鲁棒的相似度度量应该能够变现表观、位置、时间和空间信息。由于这些线索差异性较大，不能直接组合在一起，一般的MOT方法会分别使用网络处理这些特征。</p>
-<p>本文提出了一种Spatial-Temporal Relation network能够同时encode多种线索，并从时空关系中推理轨迹和检测的匹配关系。该网络能够端到端的训练并在MOT15-17benchmark上都取得了SOTA的性能。</p>
-      </div>
-    </div>
-    <div class="article-footer">
-      <div class="article-meta pull-left">
-        <!-- 分类pc端可见 -->
-        <span class="pc-view">
-          
-        <span>
-          
-            <i class="iconfont icon-06tags"></i>标签:
-            
-              <span class="span--tag">
-                <a href="/tags/MOT/">
-                  #MOT
-                </a>
-              </span>
-            
-              <span class="span--tag">
-                <a href="/tags/Spatial-Temporal-Relational-Network/">
-                  #Spatial-Temporal Relational Network
-                </a>
-              </span>
-            
-                    
-        </span>
-      </span></div>
-      
-        <div class="article-meta pull-right">
-          <span class="pc-view">
-            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="STRN"></span>
           </span>
         </div>
       
