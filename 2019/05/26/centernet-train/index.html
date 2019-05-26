@@ -8,12 +8,12 @@
   
   
   
-  <title>工具使用-pycharm+github push/pull/branch/merge操作 | YixiaoZhou&#39;s blog</title>
+  <title>代码片段-CenterNet的训练部分多线程代码分析 | YixiaoZhou&#39;s blog</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="pycharm,github,">
+    <meta name="keywords" content="CenterNet,train.py,多线程,">
   
 
   <script>
@@ -189,17 +189,17 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>工具使用-pycharm+github push/pull/branch/merge操作</span>
+    <span>代码片段-CenterNet的训练部分多线程代码分析</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-05-24
+      2019-05-26
     </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="pycharm-github"></span>
+        浏览 : <span class="article-timer" data-identity="centernet-train"></span>
       </span>
     
   </div>
@@ -208,85 +208,15 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h3 id="PyCharm-添加-GitHub账户"><a href="#PyCharm-添加-GitHub账户" class="headerlink" title="PyCharm 添加 GitHub账户"></a>PyCharm 添加 GitHub账户</h3><ul>
-<li><p>为了捋顺整条线，我们先使用pycharm创建新的项目，这里我的项目名称是<code>test_pg</code></p>
-</li>
-<li><p>File -&gt; settings -&gt; Version Control -&gt; Github 添加GitHub账号密码并测试连接是否成功。</p>
-<p><img src="/2019/05/24/pycharm-github/setting.png" alt="setting"></p>
-<p>在setting窗口设置版本控制version Control中GitHub的连接账号。按下图步骤依次填写。</p>
-<p>login: 填写自己github的用户名</p>
-<p>password: 自己GitHub的登陆密码。</p>
-<p><img src="/2019/05/24/pycharm-github/github login.png" alt="github login"></p>
-<p>然后第5步点击test按钮，测试与github账号的通信是否成功，成功如下图所示。</p>
-<p><img src="/2019/05/24/pycharm-github/github login test.png" alt="github login test"></p>
-</li>
-</ul>
-<h3 id="上传本地项目"><a href="#上传本地项目" class="headerlink" title="上传本地项目"></a>上传本地项目</h3><ul>
-<li>将本地pycharm里的project分享到github上，并且在自己的github上创建一个对应的repository</li>
-</ul>
-<p><img src="/2019/05/24/pycharm-github/local to project.png" alt="local to github"></p>
-<p>点击分享（Share Project on GitHub）之后 出现如下界面， 可以选择是否作为私有项目。然后输入对该项目的简短描述。</p>
-<p><img src="/2019/05/24/pycharm-github/share.png" alt="share"></p>
-<p>此时弹出<code>Add Files For Initial Commit</code>窗口，选择第一次要分享到github的文件，点击OK</p>
-<p><img src="/2019/05/24/pycharm-github/init commit.png" alt="init commit"></p>
-<p>分享成功的话，右下脚弹出窗口：</p>
-<p><img src="/2019/05/24/pycharm-github/succefully shared.png" alt="share successfully"></p>
-<p>此时github上就能够找到当前的repository</p>
-<p><img src="/2019/05/24/pycharm-github/github examplar.png" alt="github examplar"></p>
-<hr>
-<h3 id="更新代码"><a href="#更新代码" class="headerlink" title="更新代码"></a>更新代码</h3><p>在本地修改，删除，或者添加代码之后，需要更新到Github对应的项目中， 比如我们这里新创建一个<code>README.md</code> 文档。</p>
-<p><img src="/2019/05/24/pycharm-github/readme md.png" alt="readme md"></p>
-<p>可以发现此时由于文档尚未加入到带分享目录中， 标题颜色是红色。右键文件，按如下方式add文件，文件名变为绿色。</p>
-<p><img src="/2019/05/24/pycharm-github/add readme.png" alt="add readme"></p>
-<p>然后再点击add上面的<code>commit File...</code> 选项。选择要commit的文件，填写commit内容。然后点击<code>commit</code> 这里其实是<code>Commit and Push</code>，即顺便将其push到github对应的repository上.</p>
-<p><img src="/2019/05/24/pycharm-github/commit readme.png" alt="commit readme"></p>
-<p>commit成功的话左下角<code>Version Control</code>窗口会显示提示：</p>
-<p><img src="/2019/05/24/pycharm-github/commit result.png" alt="commit result"></p>
-<p>上面是新创建的文件push到github上，对于修改的文件可以发现文件标题由绿色变为蓝色，这时候可以通过对比查看文件修改了什么</p>
-<p><img src="/2019/05/24/pycharm-github/modify readme.png" alt="modify readme"></p>
-<p><img src="/2019/05/24/pycharm-github/compare modify.png" alt="compare modify"></p>
-<p><img src="/2019/05/24/pycharm-github/modify content.png" alt="modify content"></p>
-<p>此时如果需要上传的话，先进行commit，然后再push</p>
-<p><img src="/2019/05/24/pycharm-github/modify commit.png" alt="modify commit"></p>
-<p><img src="/2019/05/24/pycharm-github/commit content.png" alt="commit content"></p>
-<p><img src="/2019/05/24/pycharm-github/push modify.png" alt="push modify"></p>
-<p><img src="/2019/05/24/pycharm-github/push successful.png" alt="push successful"></p>
-<p>此时github中的repository出现对应的修改。</p>
-<p><img src="/2019/05/24/pycharm-github/modify successful.png" alt="modify successful"></p>
-<hr>
-<h3 id="将github上的修改拉回本地"><a href="#将github上的修改拉回本地" class="headerlink" title="将github上的修改拉回本地"></a>将github上的修改拉回本地</h3><p><img src="/2019/05/24/pycharm-github/modify from github.png" alt="modify from github"></p>
-<p><img src="/2019/05/24/pycharm-github/modify from github commit.png" alt="modify from github commit"></p>
-<p>​    然后可以发现github上的readme文件多了我们添加的一句话。现在将修改pull到本地。</p>
-<p>​    <img src="/2019/05/24/pycharm-github/pull github.png" alt="pull github"></p>
-<p><img src="/2019/05/24/pycharm-github/pull info.png" alt="pull info"></p>
-<p>成功后可以发现本地的readme文件也发生了对应的修改。</p>
-<hr>
-<h3 id="在远端创建新分支"><a href="#在远端创建新分支" class="headerlink" title="在远端创建新分支"></a>在远端创建新分支</h3><p>在上面所有操作中，我们都是在默认的master分支上进行操作的，又是我们需要创建新的分支，在新的分支上验证了修改代码的正确性，然后再merge到master上。</p>
-<ul>
-<li>点击IDE右下角 Git: master按钮， 选择 <code>New Branch</code></li>
-</ul>
-<p><img src="/2019/05/24/pycharm-github/new branch.png" alt="new branch"></p>
-<ul>
-<li><p>输入分支名称， 点击OK</p>
-<p><img src="/2019/05/24/pycharm-github/branch name.png" alt="branch name"></p>
-</li>
-<li><p>现在再打开git:master 可以发现local 分支多了个branch分支， branch分支和master分支一模一样。</p>
-<p><img src="/2019/05/24/pycharm-github/view branch.png" alt="new branch"></p>
-</li>
-<li><p>删除本地master分支，然后再branch分支上进行操作.这是可以发现local分支列表中只有branch分支了。</p>
-</li>
-</ul>
-<p><img src="/2019/05/24/pycharm-github/delete master.png" alt="delete master"></p>
-<ul>
-<li><p>在branch分支中修改readme 内容，然后push到github上。</p>
-<p><img src="/2019/05/24/pycharm-github/push branch.png" alt="push branch"></p>
-<p>注意这里是由branch-&gt; origin:branch, 之前是master-&gt;origin:master</p>
-<p>此时可以发现</p>
-<p><img src="/2019/05/24/pycharm-github/github branch.png" alt="github branch"></p>
-<hr>
-<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>后面用到merge的时候再详细补充。</p>
-</li>
-</ul>
+      <p>CenterNet的代码在<code>train.py</code>文件中自己定义了多线程的数据处理方式，而不是用的pytorch自带的，所以这里来分析一下这部分的实现。</p>
+<p>头文件导入多线程处理包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"><span class="keyword">from</span> torch.multiprocessing <span class="keyword">import</span> Process, Queue</span><br></pre></td></tr></table></figure>
+<p><code>queue</code>主要用来创建队列，阻塞型队列，当queue满的时候再执行put操作，则暂时阻塞直到有空位置腾出来再继续进行，同样当queue为空的时候执行get操作也会暂时阻塞。</p>
+<p>multiprocessing中的Queue和queue.Queue功能差不多，但是他能实现多进程之间数据的共享。</p>
+<p>Process多进程包。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># train</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(training_dbs, validation_db, start_iter=<span class="number">0</span>)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    training_queue = Queue(system_configs.prefetch_size)</span><br><span class="line">    validation_queue = Queue(<span class="number">5</span>)</span><br><span class="line">    <span class="comment"># 创建用于多个进程共享的队列</span></span><br><span class="line">    pinned_training_queue = queue.Queue(system_configs.prefetch_size)</span><br><span class="line">    pinned_validation_queue = queue.Queue(<span class="number">5</span>)</span><br><span class="line">    <span class="comment"># 创建用于当前主线程的数据存储队列</span></span><br><span class="line">    data_file = <span class="string">"sample.&#123;&#125;"</span>.format(training_dbs[<span class="number">0</span>],data)  <span class="comment"># 读取数据的函数</span></span><br><span class="line">    sample_data = importlib.import_module(data_file).sample_data  <span class="comment"># 动态导入模块</span></span><br><span class="line">    </span><br><span class="line">    training_tasks = init_parallel_jobs(training_dbs, training_queue, sample_data, <span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 在init_parallel_jobs函数中是创建了多个进程，并行的读取数据</span></span><br><span class="line">    <span class="comment"># def init_parallel_jobs(dbs, queue, fn, data_aug):</span></span><br><span class="line">    <span class="comment"># 		tasks = [Process(target=prefetch_data, args=(db, queue, fn, data_aug)) for db in dbs]  # 每个进程的处理函数是prefetch_data, 参数中传递了数据集， 保存结果的队列， 还有读取数据的函数和是否增广的标志。</span></span><br><span class="line">    <span class="comment"># 		for task in tasks:</span></span><br><span class="line">    <span class="comment"># 			task.daemon = True   # 将进程设置为保护进程，当主线程结束时，该进程自动结束。</span></span><br><span class="line">    <span class="comment"># 			task.start()         # 启动不同的进程</span></span><br><span class="line">    <span class="comment"># 		return tasks</span></span><br><span class="line">    <span class="keyword">if</span> val_iter:</span><br><span class="line">        validation_tasks = init_parallel_jobs([validation_db], validation_queue, dample_data, <span class="literal">False</span>)</span><br><span class="line">    </span><br><span class="line">    training_pin_semaphore 	= threading.Semaphore()</span><br><span class="line">    validation_pin_semaphore = threading.Semaphore()</span><br><span class="line">    training_pin_semaphore.acquire()</span><br><span class="line">    validation_pin_semaphore.acquire()</span><br><span class="line">    <span class="comment"># 这两句给规整数据的线程申请了信号量</span></span><br><span class="line">    </span><br><span class="line">    training_pin_args = (training_queue, pinned_training_queue, training_pin_semaphore)</span><br><span class="line">    training_pin_thread = threading.Thread(target=pin_memory, args=training_pin_args)</span><br><span class="line">    <span class="comment"># 创建的线程执行函数是pin_memory</span></span><br><span class="line">    <span class="comment"># def pin_memory(data_queue, pinned_data_queue, sema):</span></span><br><span class="line">    <span class="comment"># 		while True:   # 注意这部分是死循环的，知道sema申请到信号量，也就是线程释放了结束</span></span><br><span class="line">    <span class="comment"># 			data = data_queue.get()  # 多进程去填满data_queue队列，然后再该线程中从data_queue中取数据</span></span><br><span class="line">    <span class="comment"># 			data["xs"] = [x.pin_memory() for x in data["xs"]]</span></span><br><span class="line">	<span class="comment"># 			data["ys"] = [y.pin_memory() for y in data["ys"]]</span></span><br><span class="line">    <span class="comment"># 			pinned_data_queue.put(data)  # 将多进程得到的数据存放在当前线程队列中</span></span><br><span class="line">    <span class="comment"># 			if sema.acquire(blocking=False):  # 没申请到信号量就继续执行循环， 而这个信号量看下面的代码发现是训练结束的时候才会释放，也就是说在训练没结束时，该线程一直在尝试从data_queue中拷贝数据到pinned_data_queue中供使用</span></span><br><span class="line">    <span class="comment">#				return</span></span><br><span class="line">    training_pin_thread.daemon = <span class="literal">True</span></span><br><span class="line">	training_pin_thread.start()</span><br><span class="line">    ...</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">with</span> stdout_to_tqdm() <span class="keyword">as</span> save_stdout:</span><br><span class="line">        <span class="keyword">for</span> iteration <span class="keyword">in</span> tqdm(range(start_iter+<span class="number">1</span>, max_iteration+<span class="number">1</span>), file=save_stdout, ncols=<span class="number">80</span>):</span><br><span class="line">            training = pinned_training_queue.get(block=<span class="literal">True</span>)</span><br><span class="line">            <span class="comment"># 从当前的线程中拿数据，拿不到就阻塞等待</span></span><br><span class="line">            ...</span><br><span class="line">    training_pin_semaphore.release()</span><br><span class="line">    validation_pin_semaphore.release()</span><br><span class="line">    <span class="comment"># 当训练完成后，释放信号量，这时候准备数据的线程获得信号量，退出循环进而回收资源</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> training_task <span class="keyword">in</span> training_tasks:</span><br><span class="line">        training_task.terminate()</span><br><span class="line">    <span class="keyword">for</span> validation_task <span class="keyword">in</span> validation_tasks:</span><br><span class="line">        validation_task.termination()</span><br><span class="line">    <span class="comment"># 终止数据读取的进程，注意这里进程的终止需要晚于准备数据线程的时间，因为准备数据线程是从进程贡献的队列中拿数据的，如果进程过早的退出， 线程中的队列拿不到数据就会发生阻塞。</span></span><br></pre></td></tr></table></figure>
+<p>这部分代码并行处理大致可以分为3部分。以下面的图示来讲三个阶段大体上是并行的，通过两个队列来进行传递数据。另外与主线程的归属公国daemon和信号量实现：</p>
+<p><img src="/2019/05/26/centernet-train/multiprocessing.png" alt="multiprocessing"></p>
     </div>
   </div>
   
@@ -297,7 +227,7 @@
         
           本文作者 : zhouzongwei <br>
         
-        原文链接 : <a href>http://yoursite.com/2019/05/24/pycharm-github/</a><br>
+        原文链接 : <a href>http://yoursite.com/2019/05/26/centernet-train/</a><br>
         版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
         </blockquote>
       </div>
@@ -357,14 +287,20 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/pycharm/">
-              #pycharm
+            <a href="/tags/CenterNet/">
+              #CenterNet
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/github/">
-              #github
+            <a href="/tags/train-py/">
+              #train.py
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/多线程/">
+              #多线程
             </a>
           </span>
           
@@ -389,15 +325,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/2019/05/23/MOT-RNN/" target="_self">阅读笔记-Online Multi-Target Tracking Using Recurrent Neural Networks</a>
+        <a href="/2019/05/24/pycharm-github/" target="_self">工具使用-pycharm+github push/pull/branch/merge操作</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/2019/05/26/centernet-train/" target="_self">代码片段-CenterNet的训练部分多线程代码分析</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
